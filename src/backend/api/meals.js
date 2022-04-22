@@ -60,8 +60,9 @@ router.get("/", async (request, response) => {
       .select("*");
     if (maxPrice || title || createdAfter || limit || availableReservations) {
       if (maxPrice) {
-        console.log(allMeals);
-        allMeals = allMeals.filter((meal) => meal.price < maxPrice);
+        allMeals.forEach((meal) => console.log(meal.price, typeof meal.price));
+
+        allMeals = allMeals.filter((meal) => meal.price < parseInt(maxPrice));
       }
       if (title) {
         allMeals = allMeals.filter((meal) =>
