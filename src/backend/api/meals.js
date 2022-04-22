@@ -2,51 +2,6 @@ const express = require("express");
 const router = express.Router();
 const knex = require("../database");
 
-// router.get("/", async (request, response) => {
-//   try {
-//     // knex syntax for selecting things. Look up the documentation for knex for further info
-//     const maxPrice = request.query.maxPrice;
-//     const title = request.query.title;
-//     const createdAfter = request.query.createdAfter;
-//     const limit = request.query.limit;
-//     const availableReservations = request.query.availableReservations;
-//     let allMeals = knex("meal")
-//       .leftJoin("reservation", "meal.id", "=", "reservation.meal_id")
-//       .select("*");
-//     if (maxPrice || title || createdAfter || limit || availableReservations) {
-//       if (maxPrice) {
-//         allMeals = allMeals.where("price", "<", maxPrice);
-//       }
-//       if (title) {
-//         allMeals = allMeals.filter((meal) =>
-//           meal.title.toLowerCase().includes(title.toLowerCase())
-//         );
-//       }
-//       if (createdAfter) {
-//         allMeals = allMeals.filter(
-//           (meal) => Date.parse(meal.created_date) >= Date.parse(createdAfter)
-//         );
-//       }
-//       if (limit) {
-//         allMeals = allMeals.slice(0, limit);
-//       }
-//       if (availableReservations) {
-//         allMeals = allMeals.filter(
-//           (meal) => meal.max_reservations > meal.number_of_guests
-//         );
-//       }
-//       let finalResult = await allMeals.select("title");
-//       response.json(finalResult);
-//     } else {
-//       const titles = await knex("meal").select("title");
-//       response.json(titles);
-//       console.log(allMeals);
-//     }
-//   } catch (error) {
-//     throw error;
-//   }
-// });
-
 router.get("/", async (request, response) => {
   try {
     // knex syntax for selecting things. Look up the documentation for knex for further info
@@ -60,8 +15,6 @@ router.get("/", async (request, response) => {
       .select("*");
     if (maxPrice || title || createdAfter || limit || availableReservations) {
       if (maxPrice) {
-        allMeals.forEach((meal) => console.log(meal.price, typeof meal.price));
-
         allMeals = allMeals.filter((meal) => meal.price < parseInt(maxPrice));
       }
       if (title) {
