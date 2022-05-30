@@ -12,7 +12,7 @@
     "server": "nodemon ./src/backend/server",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Benjamin Hughes",
+  "author": "Jan Othman",
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.12.3",
