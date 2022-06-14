@@ -4,7 +4,7 @@ const knex = require("../database");
 
 router.get("/", async (request, response) => {
   try {
-    // knex syntax for selecting things. Look up the documentation for knex for further info
+    // knex syntax for selecting things. Look up the documentation for knex for further infoo
     const maxPrice = request.query.maxPrice;
     const title = request.query.title;
     const createdAfter = request.query.createdAfter;
