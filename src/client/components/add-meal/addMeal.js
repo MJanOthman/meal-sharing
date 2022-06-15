@@ -21,7 +21,7 @@ export const NewMeal = () => {
   };
 
   function addingMealByFetch(meal) {
-    fetch("http://localhost:5000/api/meals", {
+    fetch("/api/meals", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

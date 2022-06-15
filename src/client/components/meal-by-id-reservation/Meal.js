@@ -42,7 +42,7 @@ export function Meal() {
     return date;
   }
   function addReservationbyFetch(reservationInfo) {
-    fetch("http://localhost:5000/api/reservations", {
+    fetch("/api/reservations", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
