@@ -19,7 +19,7 @@ router.post("/", async (request, response) => {
 
 router.get("/:id", async (request, response) => {
   const id = request.params.id;
-  const details = await knex("reservation").select("*").where({ id: id });
+  const details = await knex("reservation").select("*").where({ meal_id: id });
   response.json(details);
 });
 

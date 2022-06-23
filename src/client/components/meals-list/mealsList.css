@@ -1,0 +1,67 @@
+.meals-list {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-gap: 30px;
+  margin: 25px;
+}
+.meals-menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 130px;
+  margin-bottom: 130px;
+  align-items: center;
+}
+.meal {
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  width: 150px;
+  height: fit-content;
+  margin: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.meal-title {
+  font-family: monospace;
+}
+.meal-price {
+  color: #c49450;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.booking-btn {
+  background-color: #134e5b;
+}
+.second-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1400px) {
+  .meals-list {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-gap: 25px;
+    margin: 25px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .meals-list {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-gap: 25px;
+    margin: 25px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .meals-list {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 25px;
+    margin: 25px;
+  }
+}

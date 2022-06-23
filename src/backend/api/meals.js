@@ -4,7 +4,7 @@ const knex = require("../database");
 
 router.get("/", async (request, response) => {
   try {
-    // knex syntax for selecting things. Look up the documentation for knex for further info
+    // knex syntax for selecting things. Look up the documentation for knex for further infoo
     const maxPrice = request.query.maxPrice;
     const title = request.query.title;
     const createdAfter = request.query.createdAfter;
@@ -38,7 +38,7 @@ router.get("/", async (request, response) => {
 
       response.json(allMeals);
     } else {
-      const titles = await knex("meal").select("title");
+      const titles = await knex("meal").select("*");
       response.json(titles);
     }
   } catch (error) {
@@ -54,7 +54,7 @@ router.post("/", async (request, response) => {
 
 router.get("/:id", async (request, response) => {
   const id = request.params.id;
-  const title = await knex("meal").select("title").where({ id: id });
+  const title = await knex("meal").select("*").where({ id: id });
   response.json(title);
 });
 
